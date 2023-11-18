@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +13,7 @@
     <header class="p-3 text-bg-dark">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/public/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="/presentacion/index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <img src="images/black-logo.png" alt="logo" width="55" height="55">
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -18,7 +21,7 @@
                 <li><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
             </ul>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Logout</button>
+                <a href="../negocio/controladores/LogoutController.php" class="btn btn-outline-light me-2">Logout</a>
             </div>
         </div>
     </div>
@@ -27,13 +30,24 @@
     <div class="container">
         <section class="py-5 text-center">
             <h2>Tienda</h2>
+            <?php
+            if (isset($_SESSION["firstName"]))
+                    echo $_SESSION["firstName"];
+            else
+                echo "NO USER";
+
+            ?>
         </section>
 
         <section class="row g-5">
             <!-- Carrito-->
             <aside class="col-md-5 col-lg-4 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-primary">Su carrito</span>
+                    <span class="text-primary">Carrito de
+                        <?php
+                        echo $_SESSION["firstName"];
+                        ?>
+                    </span>
                     <span class="badge bg-primary rounded-pill">3</span>
                 </h4>
                 <ul class="list-group mb-3">

@@ -42,18 +42,17 @@
         </main>
         <aside class="col-4">
             <div class="container-xxl p-5 m-xl-5">
-                <form>
+                <form action="../negocio/crearSesion.php" method="post">
                     <h1 class="h3 mb-3 fw-normal">Login</h1>
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email</label>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Clave</label>
                     </div>
-
-                    <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
+                    <input type="submit" name="iniciarSesion" class="btn btn-primary w-100 py-2" value="Iniciar sesión">
                     <p class="mt-5 mb-3 text-body-secondary">Regístrese si aún no lo ha hecho</p>
                 </form>
             </div>

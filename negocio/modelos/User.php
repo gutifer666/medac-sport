@@ -1,10 +1,9 @@
 <?php
 
-namespace models;
+namespace negocio\models;
 
 class User
 {
-    private $id;
     private $firstName;
     private $lastName;
     private $email;
@@ -18,9 +17,5 @@ class User
         $this->email = $email;
         $this->password = $password;
         $this->shippingAddress = $shippingAddress;
-    }
-    public function getId(): string
-    {
-        return $this->id;
     }
 }
